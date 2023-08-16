@@ -1,8 +1,21 @@
 package com.ohgiraffers.section02.loopingAndBranching.level02.normal;
 
+import java.util.Scanner;
+
 public class Application1 {
 
     public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("문자열 입력");
+        String scannedString = sc.nextLine();
+
+        String[] scannedStringArr;
+        scannedStringArr = scannedString.split("");
+
+        for(int i=0;i<scannedString.length();i++) { //출력
+            System.out.println(scannedStringArr[i]);
+        }
 
         /* 문자열을 입력 받아서 문자열의 각 인덱스별로 한 글자씩 출력하세요
          *

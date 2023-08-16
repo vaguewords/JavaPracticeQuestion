@@ -9,6 +9,7 @@ public class Application5 {
         String[] chickenArr = new String[]{"후라이드", "양념", "파닭", "매콤", "치즈", "간장"};
 
         Scanner sc = new Scanner(System.in);
+        System.out.println("치킨 이름을 입력하세요");
         String chickenSearch = sc.nextLine();
 
         switch (chickenSearch) {
