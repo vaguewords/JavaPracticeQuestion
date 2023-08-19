@@ -1,5 +1,8 @@
 package com.ohgiraffers.section01.array.level03.hard;
 
+import java.util.Random;
+import java.util.Scanner;
+
 public class Application3 {
 
     public static void main(String[] args) {
@@ -28,6 +31,71 @@ public class Application3 {
          * 4자리 숫자를 입력하세요 : 7416
          * 정답입니다.
          * */
+
+        Scanner sc = new Scanner(System.in);
+
+        int iarr[] = new int[4];
+        int input[] = new int[4];
+        int sCount = 0;
+        int bCount = 0;
+        int countDown = 10;
+
+        for(int i = 0; i < iarr.length; i++) {
+            iarr[i] = new Random().nextInt(10);
+            for(int j = 0; j < i; j++) {
+                if(iarr[i] == iarr[j]) {
+                    i--;
+                    break;
+                }
+            }
+        }
+
+        for(int i = 0; i < iarr.length; i++) {
+            System.out.print(iarr[i] + " ");
+        }
+        System.out.println();
+
+        while(true) {
+            sCount = 0;
+            bCount = 0;
+            System.out.println(countDown + "회 남으셨습니다.");
+            System.out.print("4자리 숫자를 입력하세요 : ");
+            String str = sc.nextLine();
+
+            if(str.length() != 4) {
+                System.out.println("4자리의 정수를 입력해야 합니다.");
+            } else {
+                countDown--;
+
+                for(int i = 0; i < input.length; i++) {
+                    input[i] = (int) (str.charAt(i) - 48);
+                    if(iarr[i] == input[i]) {
+                        sCount++;
+                    }
+                }
+
+                for(int i = 0; i < iarr.length; i++) {
+                    for(int j = 0; j < iarr.length; j++) {
+                        if(input[i] != iarr[i] && iarr[i] == input[j]) {
+                            bCount++;
+                        }
+                    }
+                }
+            }
+
+            if(sCount == 4) {
+                System.out.println("정답입니다.");
+                break;
+            } else {
+                System.out.println("아쉽네요 " + sCount + "S " + bCount + "B 입니다.");
+            }
+
+            if(countDown == 0) {
+                System.out.println("10번의 기회를 모두 소진하셨습니다. 프로그램을 종료합니다.");
+                break;
+            }
+
+        }
     }
 
 }

@@ -33,6 +33,41 @@ public class Application2 {
          * 김정희 대조영
          * 김유신 이사부
          */
+        String student[] = {"홍길동", "이순신", "유관순", "윤봉길", "장영실", "임꺽정", "장보고", "이태백", "김정희", "대조영", "김유신", "이사부"};
+        String team1[][] = new String[3][2];
+        String team2[][] = new String[3][2];
+
+        int countNum = 0;
+
+        for(int i = 0; i < team1.length; i++) {
+            for(int j = 0; j < team1[i].length; j++) {
+                team1[i][j] = student[countNum];
+                countNum++;
+            }
+        }
+
+        for(int i = 0; i < team2.length; i++) {
+            for(int j = 0; j < team2[i].length; j++) {
+                team2[i][j] = student[countNum];
+                countNum++;
+            }
+        }
+
+        System.out.println("1분단 인원: ");
+        for(int i = 0; i < team1.length; i++) {
+            for(int j = 0; j < team1[i].length; j++) {
+                System.out.print(team1[i][j] + "  ");
+            }
+            System.out.println();
+        }
+
+        System.out.println("2분단 인원: ");
+        for(int i = 0; i < team2.length; i++) {
+            for(int j = 0; j < team2[i].length; j++) {
+                System.out.print(team2[i][j] + "  ");
+            }
+            System.out.println();
+        }
 
     }
 

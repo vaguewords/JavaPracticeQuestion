@@ -53,10 +53,8 @@ public class LibraryMenu {
                     break;
             }
 
-
+    sc.close();
         } while (true);
-
-
     }
     public void selectAll(){
         /*
@@ -70,10 +68,23 @@ public class LibraryMenu {
     }
     public void searchBook(){
         Scanner sc = new Scanner(System.in);
-        String searchKeyword = sc.nextLine();
+        String keyword = sc.nextLine();
+        Book[] searchList = lm.searchBook(keyword);
+
     }
     public void rentBook(){
         Scanner sc = new Scanner(System.in);
         int rentBookIndex = sc.nextInt();
+        int result = 0;
+        switch (result) {
+            case 0 :
+                System.out.println("성공적으로 대야되었습니다.");
+            case 1 :
+                System.out.println("나이 제한으로 대여 불가능입니다.");
+            case 2 :
+                System.out.println("성공적으로 대여되었습니다. 요리학원 쿠폰이 발급되었습니다.\n" +
+                        " 마이페이지를 통해 확인하세요");
+        }
     }
+
 }
